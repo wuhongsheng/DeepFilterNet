@@ -83,7 +83,7 @@ jobs:
         uses: nttld/setup-ndk@v1
         with:
           ndk-version: r25c
-          local-cache: true
+          link-to-sdk: true
 
       - name: Rust cache
         uses: Swatinem/rust-cache@v2

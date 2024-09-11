@@ -64,7 +64,7 @@ jobs:
             libext: dll
           - build: android-arm64-v8a
             os: ubuntu-22.04
-            target: arm64-v8a
+            target: aarch64-linux-android
             cc: ndk
             cargoc-feat: '--features=vendored-openssl'
             libname: libdeep_filter_ladspa

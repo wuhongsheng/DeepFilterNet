@@ -78,6 +78,12 @@ jobs:
         with:
           toolchain: nightly
           target: ${{ matrix.target }}
+          
+      - name: Install NDK
+        uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r21e
+          local-cache: true
 
       - name: Rust cache
         uses: Swatinem/rust-cache@v2

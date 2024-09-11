@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        build: [linux-x86, linux-arm-v7, linux-arm-aarch64, macos-x86, macos-aarch64, win-msvc]
+        build: [linux-x86, linux-arm-v7, linux-arm-aarch64, macos-x86, macos-aarch64, win-msvc, android-arm64-v8a]
         include:
           - build: linux-x86
             os: ubuntu-22.04
@@ -62,6 +62,14 @@ jobs:
             cinstall-args: '--crt-static'
             libname: deep_filter_ladspa
             libext: dll
+          - build: android-arm64-v8a
+            os: android
+            target: arm64-v8a
+            cc: ndk
+            cargoc-feat: '--features=vendored-openssl'
+            libname: libdeep_filter_ladspa
+            libext: so
+
     steps:
       - uses: actions/checkout@v4
 
